@@ -101,54 +101,67 @@ if __name__ == "__main__":
             if k == 0:
                 sound = pygame.mixer.Sound('Music_Notes\C.wav')
                 sound.play()
+                print("C")
                 sound.fadeout(1000)
             if k == 1:
                 sound = pygame.mixer.Sound('Music_Notes\C_s.wav')
                 sound.play()
+                print("C#")
                 sound.fadeout(1000)
             if k == 2:
                 sound = pygame.mixer.Sound('Music_Notes\D.wav')
                 sound.play()
+                print("D")
                 sound.fadeout(1000)
             if k == 3:
                 sound = pygame.mixer.Sound('Music_Notes\D_s.wav')
                 sound.play()
+                print("D#")
                 sound.fadeout(1000)
             if k == 4:
                 sound = pygame.mixer.Sound('Music_Notes\E.wav')
                 sound.play()
+                print("E")
                 sound.fadeout(1000)
             if k == 5:
                 sound = pygame.mixer.Sound('Music_Notes\F.wav')
                 sound.play()
+                print("F")
                 sound.fadeout(1000)
             if k == 6:
                 sound = pygame.mixer.Sound('Music_Notes\F_s.wav')
                 sound.play()
+                print("F#")
                 sound.fadeout(1000)
             if k == 7:
                 sound = pygame.mixer.Sound('Music_Notes\G.wav')
                 sound.play()
+                print("G")
                 sound.fadeout(1000)
             if k == 8:
                 sound = pygame.mixer.Sound('Music_Notes\G_s.wav')
                 sound.play()
+                print("G#")
                 sound.fadeout(1000)
             if k == 9:
                 sound = pygame.mixer.Sound('Music_Notes\A.wav')
                 sound.play()
+                print("A")
                 sound.fadeout(1000)
             if k == 10:
                 sound = pygame.mixer.Sound('Music_Notes\As.wav')
                 sound.play()
+                print("A#")
                 sound.fadeout(1000)
             if k == 11:
                 sound = pygame.mixer.Sound('Music_Notes\B.wav')
                 sound.play()
+                print("H")
                 sound.fadeout(1000)
             if k == 12:
                 sound = pygame.mixer.Sound('Music_Notes\C1.wav')
                 sound.play()
+                print("C1")
                 sound.fadeout(1000)
             blink.value = 0
 
