@@ -28,47 +28,60 @@ def keys (x, y, width, height, inactive_button, active_button, action=None):
             if action == "C_sound":
                 sound = pygame.mixer.Sound('Music_Notes\C.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "Cs_sound":
                 sound = pygame.mixer.Sound('Music_Notes\C_s.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "D_sound":
                 sound = pygame.mixer.Sound('Music_Notes\D.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "Ds_sound":
                 sound = pygame.mixer.Sound('Music_Notes\D_s.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "E_sound":
                 sound = pygame.mixer.Sound('Music_Notes\E.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "F_sound":
                 sound = pygame.mixer.Sound('Music_Notes\F.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "Fs_sound":
                 sound = pygame.mixer.Sound('Music_Notes\F_s.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "G_sound":
                 sound = pygame.mixer.Sound('Music_Notes\G.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "Gs_sound":
                 sound = pygame.mixer.Sound('Music_Notes\G_s.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "A_sound":
                 sound = pygame.mixer.Sound('Music_Notes\A.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "As_sound":
                 sound = pygame.mixer.Sound('Music_Notes\As.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "H_sound":
                 sound = pygame.mixer.Sound('Music_Notes\B.wav')
                 sound.play()
+                sound.fadeout(1000)
             if action == "C1_sound":
                 sound = pygame.mixer.Sound('Music_Notes\C1.wav')
                 sound.play()
+                sound.fadeout(1000)
     else:
         pygame.draw.rect(screen,inactive_button,(x,y,width,height))
 
 pygame.init()
-pygame.time.set_timer(USEREVENT+1, 2000)
+pygame.time.set_timer(USEREVENT+1, 1200)
 pygame.display.flip()
 
 running = True
