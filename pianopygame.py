@@ -1,6 +1,5 @@
 import pygame
-
-pygame.init()
+from pygame.locals import *
 
 (width, height) = (1350,700)
 background_colour = (200,200,255)
@@ -10,8 +9,15 @@ black = (0,0,0)
 # black_blur = (0,0,100) # można zrobić dla czarnego inny blur, ale w sumie po co
 
 screen = pygame.display.set_mode((width,height))
-pygame.display.set_caption('PerfectPiano')
+pygame.display.set_caption('PerfectPiano (nope)')
 screen.fill(background_colour)
+cursor_positions = [[50+0.5*100,150+0.5*400],[155+0.5*75,50+0.5*300],[235+0.5*100,150+0.5*400],[340+0.5*75,50+0.5*300],[420+0.5*100,150+0.5*400],
+                            [525+0.5*100,150+0.5*400],[630+0.5*75,50+0.5*300],[710+0.5*100,150+0.5*400],[815+0.5*75,50+0.5*300],[895+0.5*100,150+0.5*400],
+                            [1000+0.5*75,50+0.5*300],[1080+0.5*100,150+0.5*400],[1185+0.5*100,150+0.5*400]]
+k = 0
+
+def cursor_jump():
+    print(pygame.mouse.set_pos(cursor_positions[k]))
 
 def keys (x, y, width, height, inactive_button, active_button, action=None):
     cursor = pygame.mouse.get_pos()
@@ -61,6 +67,8 @@ def keys (x, y, width, height, inactive_button, active_button, action=None):
     else:
         pygame.draw.rect(screen,inactive_button,(x,y,width,height))
 
+pygame.init()
+pygame.time.set_timer(USEREVENT+1, 2000)
 pygame.display.flip()
 
 running = True
@@ -78,10 +86,18 @@ while running:
     keys(1000,50,75,300,black,white_blur,action="As_sound")
     keys(1080,150,100,400,white,white_blur,action="H_sound")
     keys(1185,150,100,400,white,white_blur,action="C1_sound")
+    start = pygame.mouse.set_pos(cursor_positions[k])
 
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:  # If user clicked close
-            running = False  # Flag that we are done so we exit this loop
+        if event.type == USEREVENT+1:
+            if k == 12:
+                k = 0
+                cursor_jump()
+            else:
+                k += 1
+                cursor_jump()
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:   # If user clicked escape key
+            running = False     # Flag that we are done so we exit this loop
 
         pygame.display.update()
 
